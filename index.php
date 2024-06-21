@@ -7,9 +7,14 @@ include("models/log.php");
 $menuItems = getAll('menu');
 
 include "views/fixed/header.php";
+include "views/fixed/navigation.php";
+
+if (isset($_SESSION['logged_in']) && $_SESSION['role_id'] == 1) {
+    include "views/fixed/admin_links.php";
+}
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-if(isset($_SESSION['username'])) {
+if (isset($_SESSION['username'])) {
     $user = $_SESSION['username'];
 } else {
     $user = "Anonymous";
@@ -17,7 +22,14 @@ if(isset($_SESSION['username'])) {
 $timestamp = date('Y-m-d H:i:s');
 logAccess("$timestamp - $user accessed $page");
 
-include "views/fixed/navigation.php";
+echo '<div id="mainContent" class="container-fluid">';
+echo '<div class="row">';
+
+if (isset($_SESSION['logged_in']) && $_SESSION['role_id'] == 1) {
+    echo '<div class="col-md-9 ml-auto">';
+} else {
+    echo '<div class="col-12">';
+}
 
 switch ($page) {
     case 'home':
@@ -60,6 +72,10 @@ switch ($page) {
         include "views/pages/404.php";
         break;
 }
+
+echo '</div>';
+echo '</div>';
+echo '</div>';
 
 include "views/fixed/footer.php";
 ?>

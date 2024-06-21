@@ -21,7 +21,6 @@ try {
                 continue;
             }
 
-            // Generiši thumbnail ako thumbnail ne postoji
             if (createThumbnail($sourcePath, $thumbPath, 200, 200)) {
                 echo "Thumbnail kreiran za telefon ID $phoneId.<br>";
             } else {

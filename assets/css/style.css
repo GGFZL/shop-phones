@@ -194,3 +194,45 @@ p {
 #coverForAll {
     padding-right :0px;
 }
+
+/* Sidebar styling */
+#adminSidebar {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-right: 1px solid #ddd;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+#adminSidebar nav ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+#adminSidebar nav ul li {
+    margin: 10px 0;
+}
+
+#adminSidebar nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#adminSidebar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+#adminSidebar .list-group-item.active {
+    background-color: #767982;
+    color: #3c3c3c;
+}

@@ -46,7 +46,11 @@ function authenticate($conn, $email, $password) {
             $updateStmt->bindParam(':user_id', $user['user_id']);
             $updateStmt->execute();
 
-            header('Location: ../index.php?page=home');
+            if ($user['role_id'] == 1) {
+                header('Location: ../index.php?page=admin');
+            } else {
+                header('Location: ../index.php?page=home');
+            }
             exit;
         } else {
             $attempts = $user['failed_login_attempts'] + 1;

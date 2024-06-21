@@ -5,7 +5,7 @@
                 <h3>SignalSphere</h3>
             </div>
             <div class="col-sm-12 col-lg-4 justify-content-center d-flex align-items-center divForFooterLinks">
-                <a href="" target="_blank">Dokumentacija</a>
+                <a href="doc/Dokumentacija.pdf" target="_blank">Dokumentacija</a>
             </div>
             <div class="col-sm-12 col-lg-4 justify-content-center d-flex align-items-center">
                 <ul class="d-flex justify-content-between w-75">
